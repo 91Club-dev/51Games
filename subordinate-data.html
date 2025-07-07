@@ -295,7 +295,7 @@
         </div>
         <div id="date-select" style="flex:1;position:relative;">
             <button id="openDateModal" style="width:100%;padding:8px 0;border-radius:6px;border:1px solid #eee;background:#fff;font-size:12px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;">
-                <span id="selectedDate">2025-07-05</span>
+                <span id="selectedDate">2025-07-06</span>
                 <span class="material-symbols-outlined" style="font-size:18px;vertical-align:middle;">expand_more</span>
             </button>
         </div>
@@ -450,6 +450,29 @@
                     { uid: "119377", level: "Tier 2", depositAmount: "31,680", betAmount: "158,400", commission: "475.2", time: "2025-07-05" },
                     { uid: "412821", level: "Tier 1", depositAmount: "28,950", betAmount: "115,800", commission: "347.4", time: "2025-07-05" }
                 ]
+            },
+            "2025-07-06": {
+                "All": {
+                    depositNumber: 389,
+                    depositAmount: 1583048,
+                    numBettors: 1398,
+                    totalBet: 88407473.38,
+                    numFirstDeposit: 103,
+                    firstDepositAmount: 4957393
+                },
+                "Tier 1": {
+                    depositNumber: 163,
+                    depositAmount: 703048,
+                    numBettors: 848,
+                    totalBet: 4294757.4,
+                    numFirstDeposit: 42,
+                    firstDepositAmount: 1028474
+                },
+                uidCards: [
+                    { uid: "583920", level: "Tier 1", depositAmount: "33,210", betAmount: "132,840", commission: "398.5", time: "2025-07-06" },
+                    { uid: "294857", level: "Tier 2", depositAmount: "30,780", betAmount: "153,900", commission: "461.7", time: "2025-07-06" },
+                    { uid: "918273", level: "Tier 1", depositAmount: "29,640", betAmount: "118,560", commission: "355.7", time: "2025-07-06" }
+                ]
             }
         };
 
@@ -493,7 +516,7 @@
         }
 
         function updatePickerCols({year=true, month=true, day=true} = {}) {
-            const maxDate = new Date(2025, 6, 5); // July 5, 2025 (month is 0-based)
+            const maxDate = new Date(2025, 6, 6); // July 6, 2025 (month is 0-based)
             
             // Only refill columns if needed
             if (year) {
@@ -543,7 +566,7 @@
             col.addEventListener('click', e => {
                 if (e.target.classList.contains('picker-item') && !e.target.classList.contains('pad')) {
                     const newValue = parseInt(e.target.dataset.value);
-                    const maxDate = new Date(2025, 6, 5); // July 5, 2025 (month is 0-based)
+                    const maxDate = new Date(2025, 6, 6); // July 6, 2025 (month is 0-based)
                     
                     let isValid = true;
                     // Check if selection would exceed max date
@@ -580,7 +603,7 @@
                     });
                     
                     const newValue = parseInt(closest.dataset.value);
-                    const maxDate = new Date(2025, 6, 5); // July 5, 2025 (month is 0-based)
+                    const maxDate = new Date(2025, 6, 6); // July 6, 2025 (month is 0-based)
                     
                     let isValid = true;
                     // Check if scroll would exceed max date
@@ -886,7 +909,7 @@
         // Add this after your existing script
         function isDateValid(year, month, day) {
             const selectedDate = new Date(year, month - 1, day);
-            const maxDate = new Date(2025, 6, 5); // July 5, 2025 (months are 0-based)
+            const maxDate = new Date(2025, 6, 6); // July 6, 2025 (months are 0-based)
             
             return selectedDate <= maxDate;
         }
